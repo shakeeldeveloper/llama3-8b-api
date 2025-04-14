@@ -1,36 +1,52 @@
-##🦙 LLaMA 3 8B API Server
-This project provides an easy-to-use API for Meta's LLaMA 3 8B model, including support for 8-bit quantization and public access using ngrok.
+# 🦙 LLaMA 3 8B API Server
 
-It loads the model, sets default generation parameters (if not passed), and serves output through a Flask-based API. Ideal for developers, researchers, or app builders who want fast access to LLaMA's generation power.
+This project provides a lightweight, easy-to-use API for **Meta's LLaMA 3 8B** language model with support for **8-bit quantization** and **public access via ngrok**.
 
+It handles everything — from loading the model and applying default generation parameters (if not provided) to serving outputs through a **Flask-based API**. Perfect for developers, researchers, and app builders who want fast, programmatic access to LLaMA's powerful text generation.
 
-##🚀 Features
-✅ Loads LLaMA 3 8B model with 8-bit quantization
+---
 
-✅ Token-based access from Hugging Face
+## 🚀 Features
 
-✅ Text generation with customizable parameters
+- ✅ Loads LLaMA 3 8B model with 8-bit quantization
+- ✅ Hugging Face token-based authentication
+- ✅ Text generation with customizable or default parameters
+- ✅ Public API access via ngrok tunnel
+- ✅ Auto-fallback to default values if no parameters are passed
 
-✅ Public URL exposed via ngrok
+---
 
-✅ Defaults applied if params not provided
+## 📌 Requirements
 
-##📌 Requirements
-Python 3.9+
+- Python 3.9+
+- A compatible GPU (for local usage)
+- Hugging Face account and access token
 
-A GPU (for local execution)
+> ⚠️ **Important:** LLaMA 3 8B requires a GPU.  
+> If your local machine does not have one, we recommend running the project on platforms like:
+> - [Kaggle](https://kaggle.com)
+> - [Google Colab](https://colab.research.google.com)
+> - Any cloud provider with GPU access
 
-Hugging Face account & access token
+---
 
-**⚠️ Note: LLaMA 3 8B requires a GPU. If your local laptop does not have a compatible GPU, please run this project on Kaggle, Google Colab, or other cloud environments with GPU support.**
+## 📬 Sample API Call
 
-##📬 Sample API Call
+**Endpoint:** `POST /api/generate`
 
-POST /api/generate
+**Example Request Body:**
 
-JSON Body (optional):
-
-```json { "inputs": "Explain quantum computing in simple terms.", "max_tokens": 200, "do_sample_set":true "temperature_score": 0.7, "penalty": 1.0, "return_number": 1, "skip_special_token": true } ```
+```json
+{
+  "inputs": "Explain quantum computing in simple terms.",
+  "max_tokens": 200,
+  "do_sample_set":true,
+  "temperature_score": 0.7,
+  "penalty": 1.0,
+  "return_number": 1,
+  "skip_special_token": true
+}
+ ```
 
 ## 🌐 Deployment Options
 
