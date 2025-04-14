@@ -24,8 +24,25 @@ Hugging Face account & access token
 **⚠️ Note: LLaMA 3 8B requires a GPU. If your local laptop does not have a compatible GPU, please run this project on Kaggle, Google Colab, or other cloud environments with GPU support.**
 
 **📬 Sample API Call**
+
 POST /api/generate
 
 JSON Body (optional):
 
-```json { "prompt": "Explain quantum computing in simple terms.", "max_tokens": 200, "temperature": 0.7, "penalty": 1.0, "return_number": 1, "skip_special_token": true } ```
+```json { "inputs": "Explain quantum computing in simple terms.", "max_tokens": 200, "do_sample_set":true "temperature_score": 0.7, "penalty": 1.0, "return_number": 1, "skip_special_token": true } ```
+
+## 🌐 Deployment Options
+
+| Platform     | Supported | Notes                         |
+|--------------|-----------|-------------------------------|
+| ✅ Local GPU | ✔️        | Recommended for best speed    |
+| ✅ Kaggle    | ✔️        | No setup required, free GPU   |
+| ✅ Colab     | ✔️        | Ideal for prototyping         |
+
+## 🧠 Credits
+
+- [Meta AI](https://ai.meta.com/) for **LLaMA 3**
+- [Hugging Face Transformers](https://huggingface.co/docs/transformers/index) for model loading and inference
+- [bitsandbytes](https://github.com/TimDettmers/bitsandbytes) for 8-bit model quantization
+- [pyngrok](https://github.com/alexdlaird/pyngrok) for public API tunneling via ngrok
+
